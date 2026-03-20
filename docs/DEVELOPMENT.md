@@ -6,7 +6,7 @@ Guide for building, testing, and contributing to this GitHub Action.
 
 ## Prerequisites
 
-- Go 1.24+
+- Go 1.26+
 - Docker
 - Make
 
