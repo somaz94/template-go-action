@@ -1,6 +1,14 @@
 # Binary
 myaction
+bin/
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Coverage
 *.out
+coverage.html
 
 # Logs
 *.log

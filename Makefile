@@ -32,6 +32,23 @@ fmt: ## Format code
 vet: ## Run go vet
 	go vet ./...
 
+## Workflow
+
+check-gh: ## Verify gh CLI is installed and authenticated
+	@command -v gh >/dev/null 2>&1 || { echo "gh CLI not found. Install: https://cli.github.com/"; exit 1; }
+	@gh auth status >/dev/null 2>&1 || { echo "gh CLI not authenticated. Run: gh auth login"; exit 1; }
+
+branch: check-gh ## Create a feature branch (usage: make branch name=feature-name)
+	@test -n "$(name)" || { echo "Usage: make branch name=feature-name"; exit 1; }
+	git switch main
+	git pull origin main
+	git switch -c feat/$(name)
+
+pr: check-gh test vet ## Run tests, push, and create PR (usage: make pr title="feat: ...")
+	@test -n "$(title)" || { echo 'Usage: make pr title="feat: add feature"'; exit 1; }
+	git push -u origin $$(git branch --show-current)
+	./scripts/create-pr.sh "$(title)"
+
 ## Cleanup
 
 clean: ## Remove build artifacts and coverage files

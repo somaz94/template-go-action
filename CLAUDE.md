@@ -46,7 +46,7 @@ Dockerfile                   # Multi-stage build (golang:alpine → alpine)
 ## CI
 
 - `ci.yml` — Unit tests, Docker build & dry-run, action integration test
-- Docker: multi-stage build (golang:1.26-alpine → alpine:3.21)
+- Docker: multi-stage build (golang:1.26-alpine → alpine:3.23)
 
 ## Language
 

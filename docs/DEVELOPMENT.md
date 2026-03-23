@@ -49,6 +49,16 @@ docker run --rm \
 
 <br/>
 
+## Workflow
+
+```bash
+make check-gh        # Verify gh CLI is installed and authenticated
+make branch name=feature-name   # Create feature branch from main
+make pr title="feat: add feature"   # Test → push → create PR
+```
+
+<br/>
+
 ## Action Testing
 
 Test the action locally using [act](https://github.com/nektos/act) or by pushing to a branch and using `uses: ./`:

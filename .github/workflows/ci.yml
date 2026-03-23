@@ -26,6 +26,14 @@ jobs:
           go-version-file: 'go.mod'
           cache: true
 
+      - name: Verify go.mod is tidy
+        run: |
+          go mod tidy
+          if ! git diff --exit-code go.mod go.sum; then
+            echo "FAIL: go.mod or go.sum is not tidy"
+            exit 1
+          fi
+
       - name: Run go vet
         run: go vet ./...
 

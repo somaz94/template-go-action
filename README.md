@@ -112,6 +112,8 @@ docker run --rm -e INPUT_DRY_RUN=true myaction:local
 │   │   └── gitlab-mirror.yml
 │   ├── dependabot.yml
 │   └── release.yml              # Release note categories
+├── scripts/
+│   └── create-pr.sh             # Auto-generate PR body
 ├── action.yml                   # Action metadata (inputs/outputs)
 ├── Dockerfile                   # Multi-stage build
 ├── .dockerignore
@@ -159,6 +161,8 @@ make cover           # Generate coverage report
 make cover-html      # Open coverage in browser
 make fmt             # Format code (gofmt)
 make vet             # Run go vet
+make branch name=x   # Create feature branch feat/x
+make pr title="..."  # Test → push → create PR
 make clean           # Remove build artifacts
 ```
 
@@ -228,7 +232,7 @@ Users reference your action as:
 | Config | CLI flags + YAML | `INPUT_*` env vars |
 | Output | stdout/file | `GITHUB_OUTPUT` |
 | Release | Multi-platform binaries | Major tag update (v1) |
-| Makefile | build, branch, pr | build, test (no pr workflow) |
+| Makefile | build, branch, pr | build, test, branch, pr |
 
 <br/>
 
