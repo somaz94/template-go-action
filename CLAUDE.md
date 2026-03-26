@@ -12,8 +12,6 @@ make fmt         # Format code
 make vet         # Run go vet
 ```
 
-## Commit Guidelines
-
 - Do not include `Co-Authored-By` lines in commit messages.
 - Use Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `ci:`, `chore:`)
 - Do not push to remote. Only commit. The user will push manually.
@@ -48,8 +46,6 @@ Dockerfile                   # Multi-stage build (golang:alpine → alpine)
 
 - `ci.yml` — Unit tests, Docker build & dry-run, action integration test
 - Docker: multi-stage build (golang:1.26-alpine → alpine:3.23)
-
-## Language
 
 - Communicate with the user in Korean.
 - All documentation and code comments must be written in English.
