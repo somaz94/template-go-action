@@ -17,6 +17,7 @@ make vet         # Run go vet
 - Do not include `Co-Authored-By` lines in commit messages.
 - Use Conventional Commits (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `ci:`, `chore:`)
 - Do not push to remote. Only commit. The user will push manually.
+- Do not modify git config.
 
 ## Project Structure
 
