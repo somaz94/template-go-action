@@ -25,7 +25,7 @@ func LogError(msg string) {
 func SetOutput(name, value string) error {
 	outputFile := os.Getenv("GITHUB_OUTPUT")
 	if outputFile == "" {
-		fmt.Printf("::set-output name=%s::%s\n", name, value)
+		fmt.Printf("%s=%s\n", name, value)
 		return nil
 	}
 
